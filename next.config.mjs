@@ -80,6 +80,10 @@ const nextConfig = {
               key: 'x-forwarded-host',
               value: 'spandana.atparui.com',
             },
+            {
+              key: 'x-forwarded-host',
+              value: 'http://192.168.0.102:8006',
+            },
           ],
         },
       ];
