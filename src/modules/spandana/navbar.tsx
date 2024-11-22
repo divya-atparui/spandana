@@ -61,8 +61,14 @@ export default function Navbar() {
                     "px-4 py-2 transition-all duration-200",
                     scrolled
                       ? "text-gray-700 hover:text-violet-600"
-                      : "text-black hover:text-violet-200",
-                    pathname === item.href && "bg-violet-700 text-white"
+                      : "text-black hover:text-white",
+                    pathname === item.href && "bg-violet-700 text-white hover:text-white"
+                  )}
+                  textColor={
+                  cn(
+                      pathname === item.href
+                      ? "text-white"
+                     : "text-black hover:text-white",
                   )}
                 >
                   <Link href={item.href}>{item.label}</Link>

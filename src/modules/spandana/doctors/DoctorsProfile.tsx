@@ -304,7 +304,7 @@ const DoctorProfile = () => {
           </div>
         </div>
       ) : appointmentIsError ? (
-        <div className="max-w-5xl mx-auto px-5">
+        <div className="max-w-5xl mx-5 mb-5">
           <div className="px-5 bg-violet-100 p-5 m-10 border border-violet-800 rounded-md">
             <ErrorState
               title="Failed to Load Appointments"
@@ -315,9 +315,9 @@ const DoctorProfile = () => {
       ) : (
         <>
           {filteredSlots && filteredSlots.length === 0 && (
-            <div className="max-w-5xl mx-auto">
-              <div className="px-5 bg-violet-100 p-5 m-10 border border-violet-800 rounded-md">
-                <h1 className="font-mono text-xl m-2">
+            <div className="max-w-5xl mx-5 mb-5">
+              <div className="px-5 bg-violet-100  border border-violet-800 rounded-md">
+                <h1 className="font-sans text-xl m-2">
                   {format(new Date(date), "dd MMMM yyyy")}
                 </h1>
 
@@ -338,9 +338,9 @@ const DoctorProfile = () => {
 
       {/* Slots component when the slots are available */}
       {filteredSlots && filteredSlots.length > 0 && (
-        <div className="max-w-5xl mx-auto ">
+        <div className="max-w-5xl mx-5 lg:mx-auto mb-5">
           <div className="px-5 bg-violet-100 p-5 mt-4 border border-violet-800 rounded-md">
-            <h1 className="font-mono text-xl m-2">
+            <h1 className="font-sans text-xl m-2">
               {format(new Date(date), "dd MMMM yyyy")}
             </h1>
 
@@ -378,16 +378,16 @@ const DoctorProfile = () => {
                         </Button>
                       </DrawerTrigger>
                       <DrawerContent>
-                        <div className="md:max-w-xl  mx-auto flex flex-col gap-4 w-full justify-center items-centers">
+                        <div className="md:max-w-xl  mx-auto flex flex-col gap-4 w-full justify-center ">
                           <DrawerTitle>
                             <DrawerHeader>
                               Would you like to book an appointment?
                             </DrawerHeader>
                           </DrawerTitle>
 
-                          <div className="p-4 space-y-4">
+                          <div className="space-y-2 px-2">
                             {/* Appointment Details Card */}
-                            <div className="bg-violet-50 rounded-lg p-4 shadow-sm">
+                            <div className="bg-violet-50 rounded-lg p-4 shadow-sm border-2 border-violet-500">
                               <div className="flex items-center gap-2 mb-3">
                                 <CalendarIcon className="w-5 h-5 text-violet-600" />
                                 <h3 className="font-medium">
@@ -418,7 +418,7 @@ const DoctorProfile = () => {
                             </div>
 
                             {/* Doctor Details Card */}
-                            <div className="bg-violet-50 rounded-lg p-4 shadow-sm">
+                            <div className="bg-violet-50 rounded-lg p-4 shadow-sm border-2 border-violet-500">
                               <div className="flex items-center gap-2 mb-3">
                                 <User2Icon className="w-5 h-5 text-violet-600" />
                                 <h3 className="font-medium">
@@ -467,8 +467,8 @@ const DoctorProfile = () => {
                             </div>
 
                             {/* Patient Information Form */}
-                            <div className="bg-violet-50 rounded-lg p-4 shadow-sm">
-                              <div className="flex items-center gap-2 mb-3">
+                            <div className="bg-violet-50 rounded-lg p-4 shadow-sm border-2 border-violet-500">
+                              <div className="flex items-center gap-2">
                                 <UserIcon className="w-5 h-5 text-violet-600" />
                                 <h3 className="font-medium">
                                   Patient Information
@@ -533,7 +533,7 @@ const DoctorProfile = () => {
                               </div>
                             </div>
                           </div>
-                          <DrawerFooter className="pb-16">
+                          <DrawerFooter className="pb-8">
                             <Button
                               onClick={handleBookAppointment}
                               disabled={isPending}
