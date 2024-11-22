@@ -1,4 +1,4 @@
-import Navbar from "@/modules/spandana/navbar";
+
 import { Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -73,7 +73,6 @@ export default function TopHeader() {
           </div>
         </div>
       </div>
-{/* <Navbar /> */}
 
     </div>
   );

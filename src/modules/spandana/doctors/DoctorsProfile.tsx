@@ -295,7 +295,7 @@ const DoctorProfile = () => {
       </div>
 
       {appointmentLoading ? (
-        <div className="max-w-5xl mx-auto px-5">
+        <div className="max-w-5xl mx-5 mb-5 lg:mx-auto">
           <div className="px-5 bg-violet-100 p-5 m-10 border border-violet-800 rounded-md">
             <LoadingState
               title="Loading Appointments"
@@ -304,7 +304,7 @@ const DoctorProfile = () => {
           </div>
         </div>
       ) : appointmentIsError ? (
-        <div className="max-w-5xl mx-5 mb-5">
+        <div className="max-w-5xl mx-5 mb-5 lg:mx-auto">
           <div className="px-5 bg-violet-100 p-5 m-10 border border-violet-800 rounded-md">
             <ErrorState
               title="Failed to Load Appointments"
@@ -315,7 +315,7 @@ const DoctorProfile = () => {
       ) : (
         <>
           {filteredSlots && filteredSlots.length === 0 && (
-            <div className="max-w-5xl mx-5 mb-5">
+            <div className="max-w-5xl mx-5 mb-5 lg:mx-auto">
               <div className="px-5 bg-violet-100  border border-violet-800 rounded-md">
                 <h1 className="font-sans text-xl m-2">
                   {format(new Date(date), "dd MMMM yyyy")}

@@ -79,7 +79,7 @@ interface Doctor {
     lastModifiedBy: string;
     lastModifiedDate: string;
   }
-  
+ 
   interface DepartmentsResponse {
     status: number;
     message: string;
