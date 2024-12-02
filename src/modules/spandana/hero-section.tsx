@@ -4,16 +4,16 @@ import Link from "next/link";
 export default function HeroSection() {
   return (
     <>
-      <section className="relative ">
+      <section className="relative h-[800px] mt-16">
         
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat h-full mt-20"
+          className="absolute inset-0 bg-contain bg-center bg-no-repeat h-full mt-20"
           style={{
             backgroundImage:
-              'url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-eoujAy8MfM8IIKG7Gzi2vpO7XUStbo.png")',
+              'url("/banner-new.jpg")',
           }}
         >
-          <div className="absolute inset-0 bg-blue-950/10" />
+          <div className="absolute inset-0 " />
         </div>
         <div className="relative top-11 mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:items-center lg:px-8">
           <div className="max-w-xl text-left">

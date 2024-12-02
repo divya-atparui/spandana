@@ -21,22 +21,22 @@ const AnimatedButton = ({
   return (
     <button
       className={cn(
-        "relative inline-flex items-center justify-start overflow-hidden transition-all rounded hover:text-white hover:bg-neutral-100 group",
+        "relative inline-flex items-center justify-start overflow-hidden transition-all rounded group",
         className
       )}
       {...props}
     >
       <span
         className={cn(
-          "w-0 h-0 rounded absolute top-0 left-0 ease-out duration-500 transition-all group-hover:w-full group-hover:h-full -z-1 hover:text-white",
+          "w-0 h-0 rounded absolute top-0 left-0 ease-out duration-500 transition-all group-hover:w-full group-hover:h-full -z-1",
           backgroundColor
         )}
       />
       <span
         className={cn(
           "w-full transition-colors duration-300 ease-in-out z-10",
-          textColor, // Use the passed textColor
-          `group-hover:${hoverTextColor}` // Use the passed hoverTextColor
+          textColor,
+          `group-hover:${hoverTextColor}`
         )}
       >
         {children}

@@ -21,7 +21,7 @@ function DoctorDataComponent({ data }: { data: Doctor }) {
     <div>
       <div className="bg-white py-4">
         <div className="flex flex-col sm:flex-row items-center  md:items-end gap-8 mb-1">
-          <div className="hidden sm:w-1/3 sm:flex sm:justify-center sm:flex-col sm:items-center">
+          <div className="hidden md:w-1/4 lg:w-1/4 sm:flex sm:justify-center sm:flex-col sm:items-center">
             <div className="">
               {imageError ? (
                 <div className="w-24 sm:w-48 h-30 sm:h-56 flex items-center justify-center bg-gray-200 rounded-lg shadow-lg">

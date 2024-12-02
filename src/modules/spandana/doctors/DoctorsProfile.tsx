@@ -321,7 +321,7 @@ const DoctorProfile = () => {
                   {format(new Date(date), "dd MMMM yyyy")}
                 </h1>
 
-                <h1 className=" m-2 text-3xl font-mono capitalize">
+                <h1 className=" m-2 text-3xl font-sans capitalize">
                   Available Slots for {timeRange}
                 </h1>
                 <NoDataState
@@ -344,7 +344,7 @@ const DoctorProfile = () => {
               {format(new Date(date), "dd MMMM yyyy")}
             </h1>
 
-            <h1 className=" m-2 text-3xl font-mono capitalize">
+            <h1 className=" m-2 text-3xl font-sans capitalize">
               Available Slots for {timeRange}
             </h1>
             <ScrollArea className="h-[200px]">

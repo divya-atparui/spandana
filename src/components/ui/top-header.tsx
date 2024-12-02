@@ -1,4 +1,3 @@
-
 import { Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -37,24 +36,23 @@ export default function TopHeader() {
           isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-4 space-y-2 sm:space-y-4 md:space-y-0 py-1 sm:py-2">
+        <div className="container mx-auto flex flex-col lg:flex-row items-center lg:justify-around px-4 space-y-2 sm:space-y-4 md:space-y-0 py-1 sm:py-2">
           {/* Left side - Logo */}
-          <div className="w-full md:w-auto">
-            <Link
-              className="flex items-center justify-center md:justify-start gap-1 sm:gap-2 md:gap-4"
-              href="/"
-            >
+          <div className=" flex justify-start gap-10">
+            <Link className="flex justify-start gap-10 " href="/">
               <Image
                 src="/spandana_english.jpeg"
                 alt="Hospital Logo"
-                className="h-6 sm:h-8 md:h-12 w-auto"
+                className="h-10 md:h-12 w-auto"
                 width={200}
                 height={100}
               />
+            </Link>
+            <Link className="flex justify-start gap-10 " href="/">
               <Image
                 src="/spandana_telugu.png"
                 alt="Hospital Logo"
-                className="h-6 sm:h-8 md:h-12 w-auto"
+                className="h-10 md:h-12 w-auto"
                 width={200}
                 height={100}
               />
@@ -73,7 +71,6 @@ export default function TopHeader() {
           </div>
         </div>
       </div>
-
     </div>
   );
 }

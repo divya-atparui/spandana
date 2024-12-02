@@ -45,13 +45,13 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "fixed  top-16 left-0 right-0 z-50 transition-all duration-300 font-sans",
-        scrolled ? "top-0 left-0 right-0 bg-white shadow-md shadow-black/30" : "bg-violet-200"
+        "fixed top-[88px] sm:top-[108px] md:top-[105px] md:py-2 lg:top-16 left-0 right-0 z-50 transition-all duration-300 font-sans",
+        scrolled ? "top-0 md:top-0 lg:top-0 bg-white shadow-md shadow-black/30" : "bg-violet-200"
       )}
     >
       <div className="">
         <TopHeader />
-        <nav className="container mx-auto px-4 py-4">
+        <nav className="container mx-auto px-4 py-1 lg:py-2">
           <div className="hidden md:flex items-center justify-between w-full">
             <div className="flex items-center space-x-2">
               {navItems.map((item) => (
@@ -62,13 +62,8 @@ export default function Navbar() {
                     scrolled
                       ? "text-gray-700 hover:text-violet-600"
                       : "text-black hover:text-white",
-                    pathname === item.href && "bg-violet-700 text-white hover:text-white"
-                  )}
-                  textColor={
-                  cn(
-                      pathname === item.href
-                      ? "text-white"
-                     : "text-black hover:text-white",
+                    pathname === item.href &&
+                      "bg-violet-700 text-white hover:text-white"
                   )}
                 >
                   <Link href={item.href}>{item.label}</Link>
@@ -92,10 +87,10 @@ export default function Navbar() {
             <SheetTrigger asChild>
               <Button
                 variant="ghost"
-                className="p-0 md:hidden"
+                className=" rounded-full h-12 w-12 md:hidden hover:bg-violet-300"
                 onClick={() => setIsOpen(true)}
               >
-                <span className="sr-only">Toggle menu</span>
+                {/* <span className="sr-only">Toggle menu</span> */}
                 {isOpen ? (
                   <X
                     className={cn(
@@ -104,7 +99,9 @@ export default function Navbar() {
                     )}
                   />
                 ) : (
-                  <Menu color="black" size={24} className={cn("h-16 w-16")} />
+                  <div className="h-6 w-6 flex items-center justify-center ">
+                    <Menu color="black" size={24} />
+                  </div>
                 )}
               </Button>
             </SheetTrigger>

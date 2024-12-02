@@ -2,11 +2,11 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { FaStethoscope, FaBriefcaseMedical, FaUserMd } from "react-icons/fa";
+import { FaStethoscope, FaUserMd } from "react-icons/fa";
 
 import { Button } from "@/components/ui/button";
 import { useGetAllDoctors } from "@/api";
-import { Loader2 } from "lucide-react";
+import { Loader2, Clock, Languages, CircleDollarSign } from "lucide-react";
 import Link from "next/link";
 
 
@@ -67,29 +67,50 @@ const AllDoctorsPage = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-wrap gap-4 items-center justify-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
         {doctors?.map((doctor, index) => (
           <Card
             key={index}
-            className="overflow-hidden hover:shadow-lg transition-shadow"
+            className="overflow-hidden hover:shadow-lg transition-shadow w-full min-h-[400px]"
           >
-            <CardContent className="p-4">
-              <div className=" flex  justify-center pb-4">
+            <CardContent className="p-6 flex flex-col h-full">
+              <div className="flex justify-center pb-6">
                 <img
                   src={doctor.baseImgUrl}
                   alt={doctor.fullName}
-                  className="object-contain h-32 w-32  rounded-full border-2 border-gray-300"
+                  className="object-contain  h-40 w-40 rounded-full border-2 border-gray-300"
                 />
               </div>
 
-              <div className="flex items-center gap-2 mb-2">
-                <FaUserMd className="text-blue-500" />
-                <h3 className="font-semibold text-lg">
+              <div className="flex items-center gap-2 mb-4">
+                <FaUserMd className="text-blue-500 flex-shrink-0 h-4 w-4" />
+                <h3 className="font-semibold text-lg line-clamp-2">
                   {doctor.firstName} {doctor.lastName}
                 </h3>
               </div>
 
-              <div className="flex flex-wrap gap-2 mt-3">
+              <div className="space-y-2 text-sm text-gray-600 mb-4">
+                <div className="flex items-center gap-2">
+                  <FaStethoscope className="flex-shrink-0 h-4 w-4" />
+                  <span>{doctor.experienceYears} Years Experience</span>
+                </div>
+                {doctor.languages && (
+                  <div className="flex items-center gap-2">
+                    <Languages className="h-4 w-4 flex-shrink-0" />
+                    <span>{doctor.languages}</span>
+                  </div>
+                )}
+                <div className="flex items-center gap-2">
+                  <Clock className="h-4 w-4 flex-shrink-0" />
+                  <span>{doctor.availableTimeInterval} mins consultation</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CircleDollarSign className="h-4 w-4 flex-shrink-0" />
+                  <span>₹{doctor.chargesPerTimeInterval} per visit</span>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2 mt-auto mb-4">
                 <Badge
                   key={doctor.qualification}
                   variant="secondary"
@@ -113,10 +134,10 @@ const AllDoctorsPage = () => {
                     View Profile
                   </Button>
                 </Link>
-                <Button className="text-white bg-green-500 hover:bg-green-700 flex items-center gap-2 text-sm">
+                {/* <Button className="text-white bg-green-500 hover:bg-green-700 flex items-center gap-2 text-sm">
                   <FaBriefcaseMedical />
                   Book Appointment
-                </Button>
+                </Button> */}
               </div>
             </CardContent>
           </Card>
