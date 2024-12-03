@@ -51,12 +51,15 @@ export const getHospitalById = async (id: string) => {
 //   -F 'baseImage=@Screenshot from 2024-12-02 10-29-52.png;type=image/png' \
 //   -F 'iconImage=@Screenshot from 2024-12-02 10-30-03.png;type=image/png'
 
-export const createHospital = async (formData: HospitalVariables) => {
+export const createHospital = async (formData: FormData) => {
     try {
-        const data = client
-            .post("/hospitals", formData)
-            .then((response) => response.data);
-        return data;
+        const data = await client.post("/hospitals", formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+                'Authorization': `Bearer eyJhbGciOiJIUzI1NiJ9.eyJST0xFIjoiQURNSU4iLCJVU0VSSUQiOjEsIlRFTkFOVCI6InB1YmxpYyIsInN1YiI6ImFkbWluIiwiaWF0IjoxNzMzMjI4Mzg0LCJleHAiOjE3MzMyMzE5ODR9.p2L9pOVrtC4i-vFYiLKSMN2cfiiDXFLP88HiVxVwF9Y`
+            },
+        });
+        return data.data;
     } catch (error) {
         if (axios.isAxiosError(error)) {
             throw new Error(error.response?.data.message || "An error occurred");

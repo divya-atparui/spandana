@@ -45,7 +45,7 @@ export function SideNav() {
     : mainNavigation
 
   return (
-    <nav className="flex flex-col w-64 min-h-screen p-4 border-r">
+    <nav className="flex flex-col w-64 min-h-[90vh] p-4 border-r">
       <div className="space-y-1">
         {navigation.map((item) => {
           const Icon = item.icon

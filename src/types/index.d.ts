@@ -38,21 +38,22 @@ declare interface HospitalsResponse {
 }
 
 declare interface HospitalVariables {
-  hospital: {
-    id: number;
-    domainUrl: string;
-    baseImgUrl: string;
-    iconImgUrl: string;
-    configurablePreBookingMinMinsBefore: number;
-    configurablePreBookingMaxMinsBefore: number;
-    hospitalName: string;
-    hospitalAddress: string;
-    contactNumber: string;
-    tenantId: string;
-    url: string;
-  };
+  hospitalName: string;
+  hospitalAddress: string;
+  contactNumber: string;
+  domainUrl: string;
+  url: string;
+  tenantId: string;
+  configurablePreBookingMinMinsBefore: string;
+  configurablePreBookingMaxMinsBefore: string;
   baseImage: File;
   iconImage: File;
+}
+
+declare interface HospitalResponse {
+  status: number;
+  message: string;
+  data: Hospitals[];
 }
 
 declare interface UserCategories {

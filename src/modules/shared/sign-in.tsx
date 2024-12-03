@@ -77,9 +77,6 @@ export default function UserSignIn() {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-background">
-      <Button onClick={() => {
-        
-      }}>Click me</Button>
       <Card className="w-full max-w-lg">
         <CardHeader>
           <CardTitle className="text-2xl">Login</CardTitle>

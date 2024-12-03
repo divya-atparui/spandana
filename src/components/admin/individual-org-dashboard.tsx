@@ -65,7 +65,7 @@ export default function IndividualOrgDashboard() {
           <Skeleton className="h-8 w-[250px]" />
           <Skeleton className="h-4 w-[300px] mt-2" />
         </div>
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-2">
           {[1, 2, 3, 4].map((i) => (
             <Card key={i}>
               <CardHeader className="pb-2">
