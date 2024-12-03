@@ -27,7 +27,7 @@ export function AdminBreadcrumb() {
 
   const breadcrumbs = segments.map((segment, index) => {
     const isLast = index === segments.length - 1
-    let href = `/${segments.slice(0, index + 1).join('/')}`
+    const href = `/${segments.slice(0, index + 1).join('/')}`
     let name = segment
 
     // Handle organization names

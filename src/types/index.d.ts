@@ -1,13 +1,69 @@
+// {
+//   "status": 0,
+//   "message": "string",
+//   "data": [
+//     {
+//       "id": 0,
+//       "domainUrl": "string",
+//       "baseImgUrl": "string",
+//       "iconImgUrl": "string",
+//       "configurablePreBookingMinMinsBefore": 0,
+//       "configurablePreBookingMaxMinsBefore": 0,
+//       "hospitalName": "string",
+//       "hospitalAddress": "string",
+//       "contactNumber": "string",
+//       "tenantId": "string",
+//       "url": "string"
+//     }
+//   ]
+// }
+declare interface Hospitals {
+  id: number;
+  domainUrl: string;
+  baseImgUrl: string;
+  iconImgUrl: string;
+  configurablePreBookingMinMinsBefore: number;
+  configurablePreBookingMaxMinsBefore: number;
+  hospitalName: string;
+  hospitalAddress: string;
+  contactNumber: string;
+  tenantId: string;
+  url: string;
+}
 
-interface UserCategories {
+declare interface HospitalsResponse {
+  status: number;
+  message: string;
+  data: Hospitals[];
+}
+
+declare interface HospitalVariables {
+  hospital: {
+    id: number;
+    domainUrl: string;
+    baseImgUrl: string;
+    iconImgUrl: string;
+    configurablePreBookingMinMinsBefore: number;
+    configurablePreBookingMaxMinsBefore: number;
+    hospitalName: string;
+    hospitalAddress: string;
+    contactNumber: string;
+    tenantId: string;
+    url: string;
+  };
+  baseImage: File;
+  iconImage: File;
+}
+
+declare interface UserCategories {
   id: string;
   categoryName: "PATIENT" | "DOCTOR" | "TECHNICIAN" | "USER";
   status: boolean;
 }
 
-type LoginFormValues = z.infer<typeof LoginAuthSchema>
+declare type LoginFormValues = z.infer<typeof LoginAuthSchema>
 
-type AppointmentPayload = {
+declare type AppointmentPayload = {
   tenantId: string;
   doctorId: string;
   appointmentDate: string;
@@ -15,10 +71,7 @@ type AppointmentPayload = {
   patientName: string;
   appointmentFor: string;
   phoneNumber: string;
-
 };
-
-
 
 interface UserCategoriesResponse {
   status: number;
@@ -110,33 +163,6 @@ interface Doctor {
     data: AppointmentSlots[];
   }
   
-
-  // {
-  //   "status": 201,
-  //   "message": "Appointment created successfully. Email sent to patient: null and doctor: saimahesh2382@gmail.com. SMS sent to patient: null and doctor: 9887654321.",
-  //   "data": [
-  //     {
-  //       "createdBy": "anonymousUser",
-  //       "createdDate": "2024-11-19T06:40:52.224+00:00",
-  //       "lastModifiedBy": "anonymousUser",
-  //       "lastModifiedDate": "2024-11-19T06:40:52.224+00:00",
-  //       "id": 2,
-  //       "patientId": 3,
-  //       "doctorId": 1,
-  //       "departmentId": null,
-  //       "appointmentDate": "2024-11-19",
-  //       "appointStartTime": "14:15:00",
-  //       "appointEndTime": "14:30:00",
-  //       "appointIntervalTime": 15,
-  //       "appointmentCharge": 200,
-  //       "status": "PENDING",
-  //       "consultationType": "ONLINE",
-  //       "notes": null,
-  //       "patientName": "Divya",
-  //       "appointmentFor": "SELF"
-  //     }
-  //   ]
-  // }
 
   interface AppointmentSuccessResponse {
     status: number;

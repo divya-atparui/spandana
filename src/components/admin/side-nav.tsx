@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname, useSearchParams } from "next/navigation"
 import {
   IconCalendar,
   IconDashboard,
@@ -28,9 +28,11 @@ const tenantNavigation = [
 
 export function SideNav() {
   const pathname = usePathname()
+  const searchParams = useSearchParams()
   
   // Check if we're in a tenant context
   const tenantId = pathname.split('/')[2]
+  const hospitalId = searchParams.get('hospitalId')
   const isInTenantContext = pathname.startsWith('/admin/') && tenantId && tenantId !== 'settings'
   
   // Choose which navigation to show
@@ -38,7 +40,7 @@ export function SideNav() {
     ? tenantNavigation.map(item => ({
         ...item,
         // For dashboard (empty href), just use the tenant root path
-        href: `/admin/${tenantId}${item.href}`,
+        href: `/admin/${tenantId}${item.href}${hospitalId ? `?hospitalId=${hospitalId}` : ''}`,
       }))
     : mainNavigation
 

@@ -1,6 +1,5 @@
 import { SideNav } from "@/components/admin/side-nav"
 import { TopNav } from "@/components/admin/top-nav"
-import { AdminBreadcrumb } from "@/components/admin/breadcrumb"
 
 export default function AdminLayout({
   children,

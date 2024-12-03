@@ -1,13 +1,12 @@
 # Spandana Hospital Appointment System
 
 ## Overview
-The Spandana Hospital Appointment System is a web application designed to facilitate the booking of medical appointments with doctors. The application provides users with an intuitive interface to view doctor profiles, check availability, and book appointments seamlessly. It includes both a patient-facing portal and an administrative system for managing multiple hospital branches.
+The Spandana Hospital Appointment System is a web application designed to facilitate the booking of medical appointments with doctors. The application provides users with an intuitive interface to view doctor profiles, check availability, and book appointments seamlessly.
 
 ## Table of Contents
 - [Completed Features](#completed-features)
-- [In Progress](#in-progress)
 - [Planned Features](#planned-features)
-- [Technical Architecture](#technical-architecture)
+- [Future Work](#future-work)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -20,52 +19,20 @@ The Spandana Hospital Appointment System is a web application designed to facili
 - **Error Handling**: Proper error handling for loading states and failed API calls.
 - **Toast Notifications**: Users receive feedback through toast notifications for actions like successful bookings or errors.
 - **Dynamic Data Fetching**: The application fetches data from the API to display doctors and their available appointment slots.
-- **Multi-tenant Admin Dashboard**: Administrative interface supporting multiple hospital branches with:
-  - Organization overview and management
-  - Branch-specific dashboards with statistics
-  - Doctor management interface
-  - Appointment tracking system
-  - Department management
-
-## In Progress
-1. **Backend Integration**
-   - Setting up API endpoints for each feature
-   - Implementing data models and relationships
-   - Creating authentication and authorization system
-
-2. **Admin Dashboard Enhancement**
-   - Implementing CRUD operations for all entities
-   - Adding real-time data updates
-   - Enhancing data visualization and reporting
-
-3. **Multi-tenant Architecture**
-   - Finalizing tenant isolation strategy
-   - Implementing tenant-specific configurations
-   - Setting up role-based access control
 
 ## Planned Features
-- **User Authentication**: Multi-level authentication system for patients, doctors, and administrators
-- **Appointment Management**: Comprehensive system for tracking and managing appointments
-- **Analytics Dashboard**: Advanced analytics for hospital administrators
-- **Doctor Scheduling**: Automated scheduling system with conflict resolution
-- **Patient Records**: Secure electronic health records system
-- **Inventory Management**: Track medical supplies and equipment
-- **Billing Integration**: Automated billing and payment processing
+- **User Authentication**: Implement user login and registration functionality to allow users to manage their appointments.
+- **Appointment History**: Allow users to view their past and upcoming appointments.
+- **Doctor Ratings and Reviews**: Enable users to rate and review doctors after their appointments.
+- **Search and Filter Options**: Implement search and filter functionalities to help users find doctors based on specialty, availability, etc.
+- **Admin Dashboard**: Create an admin interface for managing doctors, appointments, and user accounts.
 
-## Technical Architecture
-### Frontend
-- **Framework**: Next.js 14 with App Router
-- **UI Components**: Custom components built with Radix UI
-- **Styling**: TailwindCSS with custom theming
-- **State Management**: React Query for server state
-- **Charts**: Recharts for data visualization
-
-### Backend (Planned)
-- **API**: RESTful API with Node.js/Express
-- **Database**: PostgreSQL for relational data
-- **Authentication**: JWT with refresh tokens
-- **File Storage**: AWS S3 for document storage
-- **Caching**: Redis for performance optimization
+## Future Work
+- **Integration with Payment Gateway**: Implement payment processing for appointment bookings.
+- **Mobile Application**: Develop a mobile version of the application for iOS and Android.
+- **Enhanced Security Features**: Add security measures such as two-factor authentication and data encryption.
+- **Performance Optimization**: Optimize the application for better performance and faster load times.
+- **Accessibility Improvements**: Ensure the application meets accessibility standards for all users.
 
 ## Installation
 To set up the project locally, follow these steps:
@@ -94,16 +61,9 @@ To set up the project locally, follow these steps:
    ```
 
 ## Usage
-### Patient Portal
-- Navigate to the home page to view the list of doctors
-- Click on a doctor's profile to view more details and book an appointment
-- Use the calendar to select a date and time for your appointment
-
-### Admin Dashboard
-- Access the admin interface at `/admin`
-- View and manage multiple hospital branches
-- Monitor appointments, doctors, and departments
-- Access detailed analytics and reports
+- Navigate to the home page to view the list of doctors.
+- Click on a doctor's profile to view more details and book an appointment.
+- Use the calendar to select a date and time for your appointment.
 
 ## Contributing
 Contributions are welcome! If you have suggestions for improvements or new features, please open an issue or submit a pull request.
