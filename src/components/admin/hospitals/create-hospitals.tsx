@@ -10,6 +10,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { usePostHospitals } from '@/api/hospitals/use-post-hospitals'
 import { useRouter } from 'next/navigation'
+import { useQueryClient } from '@tanstack/react-query'
 
 const TIME_OPTIONS = [
   { value: '15', label: '15 minutes' },
@@ -35,6 +36,7 @@ type HospitalFormValues = z.infer<typeof hospitalSchema>
 
 const CreateHospital = () => {
   const router = useRouter()
+  const queryClient = useQueryClient()
   const { mutate: createHospital, isPending } = usePostHospitals()
   const form = useForm<HospitalFormValues>({
     resolver: zodResolver(hospitalSchema),
@@ -103,6 +105,7 @@ const CreateHospital = () => {
 
       createHospital(formData, {
         onSuccess: () => {
+          queryClient.invalidateQueries({ queryKey: ['hospitals'] })
           router.push('/admin')
         },
         onError: (error) => {
