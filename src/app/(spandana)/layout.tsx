@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { Toaster } from "@/components/ui/toaster";
+
 import Navbar from "@/modules/spandana/navbar";
 import Footer from "@/modules/spandana/footer";
 
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: Readonly<{ 
   children: React.ReactNode;
 }>) {
   const clientId = process.env.GOOGLE_CLIENT_ID || "";
@@ -31,7 +31,7 @@ export default function RootLayout({
         <Footer />
       </main>
       {/* </GoogleOAuthProvider> */}
-      <Toaster />
+     
     </>
   );
 }

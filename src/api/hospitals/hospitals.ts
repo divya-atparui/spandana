@@ -2,6 +2,7 @@
 
 import axios from "axios";
 import { client } from "../common";
+import { cookies } from "next/headers";
 
 export const getAllHospitals = async () => {
     try {
@@ -52,11 +53,15 @@ export const getHospitalById = async (id: string) => {
 //   -F 'iconImage=@Screenshot from 2024-12-02 10-30-03.png;type=image/png'
 
 export const createHospital = async (formData: FormData) => {
+    const token =  cookies().get("authToken")?.value;
+    if (!token) {
+      throw new Error("No authentication token found");
+    }
     try {
         const data = await client.post("/hospitals", formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
-                'Authorization': `Bearer eyJhbGciOiJIUzI1NiJ9.eyJST0xFIjoiQURNSU4iLCJVU0VSSUQiOjEsIlRFTkFOVCI6InB1YmxpYyIsInN1YiI6ImFkbWluIiwiaWF0IjoxNzMzMjI4Mzg0LCJleHAiOjE3MzMyMzE5ODR9.p2L9pOVrtC4i-vFYiLKSMN2cfiiDXFLP88HiVxVwF9Y`
+                'Authorization': `Bearer ${token}`
             },
         });
         return data.data;
